@@ -24,8 +24,11 @@ int main() {
     // Data waktu (detik) dan laju aliran panas q(t) (Watt)
     float waktu[] = {0, 1, 2, 3, 4, 5, 6};
     float q_t[]   = {0, 120, 190, 170, 110, 60, 30}; // q(t) ditambahkan 1 titik di akhir
+    printf("Waktu (detik)\t\tLaju Aliran Panas (Watt)\n");
+    for (int i = 0; i < sizeof(waktu) / sizeof(waktu[0]); i++) {
+        printf("%.2f\t\t%.2f\n", waktu[i], q_t[i]);
+    }
     int n = sizeof(waktu) / sizeof(waktu[0]);
-
     float Q_total = simpsons_rule(waktu, q_t, n);
     if (Q_total >= 0)
         printf("Total panas yang dihantarkan: %.2f Joule\n", Q_total);
