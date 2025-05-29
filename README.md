@@ -21,9 +21,9 @@ $$
 
 ## STUDI KASUS 2 - Aplikasi Metode Runge-Kutta Orde 4 dalam Pemodelan Dinamika Populasi Ikan di Perairan Tawar
 
-Program ini mengimplementasikan Metode Runge-Kutta Orde 4 (RK4) untuk menyelesaikan Persamaan Diferensial Biasa (Ordinary Differential Equations/ODE) yang memodelkan dinamika populasi ikan di perairan tawar. Pemodelan populasi adalah aspek krusial dalam pengelolaan sumber daya perairan, dan model pertumbuhan populasi sering direpresentasikan menggunakan persamaan diferensial.
+Program Studi Kasus 2 mengimplementasikan Metode Runge-Kutta Orde 4 (RK4) untuk menyelesaikan Persamaan Diferensial Biasa (Ordinary Differential Equations/ODE) yang memodelkan dinamika populasi ikan di perairan tawar. Pemodelan populasi adalah aspek krusial dalam pengelolaan sumber daya perairan, dan model pertumbuhan populasi sering direpresentasikan menggunakan persamaan diferensial.
 
-Secara khusus, program ini berfokus pada model logistic growth, yang menggambarkan bagaimana laju pertumbuhan populasi dipengaruhi oleh laju pertumbuhan intrinsik (r) dan kapasitas lingkungan (K). Persamaan diferensial untuk model ini adalah:
+Secara khusus, program Studi Kasus 2 berfokus pada model logistic growth, yang menggambarkan bagaimana laju pertumbuhan populasi dipengaruhi oleh laju pertumbuhan intrinsik (r) dan kapasitas lingkungan (K). Persamaan diferensial untuk model Studi Kasus 2 adalah:
 
 $$
 \frac{dP}{dt} = rP\left(1 - \frac{P}{K}\right)
