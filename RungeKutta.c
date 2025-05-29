@@ -21,7 +21,7 @@ double rungeKutta4(double x, double y, double h) {
 int main() {
     double x0 = 0.0;    // Nilai awal x
     double y0 = 2.0;    // Nilai awal y
-    double h = 1.0;     // Ukuran langkah
+    double h = 1.0;     // Ukuran langkah semakin kecil semakin akurat
     double x = x0, y = y0;
     int n = (int)((4.0-x0)/h);         // Banyak langkah iterasi
 
