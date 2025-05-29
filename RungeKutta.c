@@ -1,35 +1,37 @@
 #include <stdio.h>
-#include <math.h>
 
-// Define the differential equation dy/dx = 4e^(0.8x) - 0.5y
-double f(double x, double y) {
-    return 4 * exp(0.8 * x) - 0.5 * y; //ganti sesuai ode yang di cari
+// Fungsi turunan dP/dt = r * P * (1 - P/K)
+double f(double t, double P) {
+    double r = 0.8;   // Laju pertumbuhan intrinsik (/tahun)
+    double K = 100.0; // Kapasitas lingkungan (ribu ekor)
+    return r * P * (1 - P / K);
 }
 
 // Fungsi Runge-Kutta orde 4 untuk satu langkah
-double rungeKutta4(double x, double y, double h) {
+double rungeKutta4(double t, double P, double h) {
     double k1, k2, k3, k4;
 
-    k1 = h * f(x, y);
-    k2 = h * f(x + h/2.0, y + k1/2.0);
-    k3 = h * f(x + h/2.0, y + k2/2.0);
-    k4 = h * f(x + h, y + k3);
+    k1 = h * f(t, P);
+    k2 = h * f(t + h/2.0, P + k1/2.0);
+    k3 = h * f(t + h/2.0, P + k2/2.0);
+    k4 = h * f(t + h, P + k3);
 
-    return y + (k1 + 2*k2 + 2*k3 + k4) / 6.0;
+    return P + (k1 + 2*k2 + 2*k3 + k4) / 6.0;
 }
 
 int main() {
-    double x0 = 0.0;    // Nilai awal x
-    double y0 = 2.0;    // Nilai awal y
-    double h = 1.0;     // Ukuran langkah semakin kecil semakin akurat
-    double x = x0, y = y0;
-    int n = (int)((4.0-x0)/h);         // Banyak langkah iterasi
+    double t0 = 0.0;   // Waktu awal (tahun)
+    double P0 = 10.0;  // Populasi awal (ribu ekor ikan)
+    double h = 0.1;    // Ukuran langkah (tahun)
+    double t = t0, P = P0;
+    int n = (int)((10.0 - t0) / h); // Banyak langkah iterasi sampai t=10 tahun
 
-    printf("x\t y\n");
+    printf("t\tPopulasi (ribu ekor)\n");
+    printf("%.2lf\t%.5lf\n", t, P);
     for(int i = 0; i < n; i++) {
-        y = rungeKutta4(x, y, h);
-        x += h;
-        printf("%.2lf\t %.5lf\n", x, y);
+        P = rungeKutta4(t, P, h);
+        t += h;
+        printf("%.2lf\t%.5lf\n", t, P);
     }
 
     return 0;
