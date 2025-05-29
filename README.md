@@ -12,7 +12,12 @@
 
 Program Studi Kasus 1 dirancang untuk menghitung total energi panas yang dihasilkan berdasarkan data laju aliran panas diskrit terhadap waktu, menggunakan Metode Simpson 1/3. Dalam banyak aplikasi rekayasa termal, data laju aliran panas seringkali tersedia dalam bentuk titik-titik diskrit dari hasil pengukuran atau simulasi, bukan sebagai fungsi matematis yang kontinu. Kondisi ini membuat perhitungan total energi  menjadi tidak dapat dianalisis dengan baik.
 
-Program Studi Kasus 1 mengimplementasikan algoritma Metode Simpson 1/3 untuk mengatasi permasalahan tersebut. Metode Simpson 1/3 adalah teknik integrasi numerik yang mengaproksimasi area di bawah kurva integral dengan menggunakan interpolasi parabola melalui tiga titik data berurutan. Pendekatan ini dapat membuat perhitungan integral yang lebih akurat dibandingkan metode linier seperti metode trapesium, terutama untuk data yang menghasilkan parabola.
+Program Studi Kasus 1 mengimplementasikan algoritma Metode Simpson 1/3 untuk mengatasi permasalahan tersebut. Metode Simpson 1/3 adalah teknik integrasi numerik yang mengaproksimasi area di bawah kurva integral dengan menggunakan interpolasi parabola melalui tiga titik data berurutan. Pendekatan ini dapat membuat perhitungan integral yang lebih akurat dibandingkan metode linier seperti metode trapesium, terutama untuk data yang menghasilkan parabola. Rumus Simpson 1/3:
+
+
+$$
+\int_{a}^{b} f(x) \, dx \approx \frac{\Delta x}{3} \left[ f(x_0) + 4f(x_1) + 2f(x_2) + \dots + 2f(x_{n-2}) + 4f(x_{n-1}) + f(x_n) \right]
+$$
 
 ## STUDI KASUS 2 - Aplikasi Metode Runge-Kutta Orde 4 dalam Pemodelan Dinamika Populasi Ikan di Perairan Tawar
 
